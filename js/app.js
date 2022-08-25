@@ -21,23 +21,11 @@
 
 /**
  * Define Global Variables
- * 
 */
 const sectionItems = document.getElementsByTagName('section');
 
-
-/**
- * End Global Variables
- * Start Helper Functions
- * 
-*/
-
-
-
-/**
- * End Helper Functions
+/*
  * Begin Main Functions
- * 
 */
 
 // build the nav
@@ -53,10 +41,6 @@ function buildNav() {
     }
 };
 
-
-
-
-
 // Add class 'active' to section when near top of viewport
 function toggleActive() {
     for (let item of sectionItems) {
@@ -68,7 +52,6 @@ function toggleActive() {
     }
 }
 
-
 // Scroll to anchor ID using scrollTO event
 function scrollTO(e) {
     if (e && e.nodeName === "li") {
@@ -78,16 +61,10 @@ function scrollTO(e) {
         toggleActive();
     }
 }
-/*
-const element = document.getElementById()
-
-*/
-
 
 /**
  * End Main Functions
  * Begin Events
- * 
 */
 
 // Build menu 
