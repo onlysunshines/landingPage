@@ -60,6 +60,7 @@ let buildNav = () => {
 */
 
 /*
+
 sectionElements.forEach(section => {
     let navbar = document.createElement('li');
     navbar.className = 'menu__link';
@@ -107,6 +108,7 @@ sectionElements.forEach(section => {
 
 
 // Scroll to anchor ID using scrollTO event
+
 function scrollTO(e) {
     if (e && e.nodeName === "li") {
         let a = e.getElementsByTagName("a");
