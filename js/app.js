@@ -140,7 +140,10 @@ window.onload = buildNav;
 
 // Scroll to section on link click
 
-document.getElementsByTagName("li").addEventListener("click", scrollTO);
+// the navbar has the 'li' elements and is tying the eventlistener with the onclick event in buildNav
+// navbar.onclick = scrollTO(sectionElement.id);
+
+//document.getElementsByTagName('li').addEventListener('click', scrollTO);
 
 // Set sections as active
 
