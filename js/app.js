@@ -22,6 +22,7 @@
 /**
  * Define Global Variables
 */
+
 const sectionElements = document.getElementsByTagName('section');
 
 /*
@@ -44,6 +45,32 @@ function buildNav() {
     }
 };
 
+
+/*
+let buildNav = () => {
+    sectionElements.forEach(section => {
+        let navbar = document.createElement('li');
+        navbar.className = 'menu__link';
+        navbar.innerHTML = `<a href='#${sectionElement.id}'>${sectionElements.dataset.nav}</a>`;
+    });
+    navbar.onclick = scrollTo(sectionElement.id);
+
+    document.getElementById('navbar__list').append(navbar);
+}
+*/
+
+/*
+sectionElements.forEach(section => {
+    let navbar = document.createElement('li');
+    navbar.className = 'menu__link';
+    navbar.innerHTML = `<a href='#${sectionElement.id}'>${sectionElements.dataset.nav}</a>`;
+    
+    navbar.onclick = scrollTO(sectionElement.id);
+
+    document.getElementById('navbar__list').append(navbar);
+});
+*/
+
 // Add class 'active' to section when near top of viewport
 
 function isActive() {
@@ -56,6 +83,29 @@ function isActive() {
     }
 }
 
+/*
+let isActive = () => {
+    sectionElements.forEach(section => {
+        if (section.getBoundingClientRect().top < 100) {
+            section.className = 'your-active-class';
+        } else {
+            section.className = '';
+        }
+    })
+};
+*/
+
+/*
+sectionElements.forEach(section => {
+    if (section.getBoundingClientRect().top < 100) {
+        section.className = 'your-active-class';
+    } else {
+        section.className = '';
+    }
+});
+*/
+
+
 // Scroll to anchor ID using scrollTO event
 function scrollTO(e) {
     if (e && e.nodeName === "li") {
@@ -67,17 +117,32 @@ function scrollTO(e) {
     }
 }
 
+/*
+let scrollTO = (e) => {
+    if (e && e.nodName === 'li') {
+        let a = e.getElementsByTagName('a');
+        let navElement = a.href;
+        document.getElementById(navElement).scrollIntoView();
+        // active function called here
+        isActive;
+    }
+}
+*/
+
 /**
  * End Main Functions
  * Begin Events
 */
 
 // Build menu 
+
 window.onload = buildNav;
 
 // Scroll to section on link click
+
 document.getElementsByTagName("li").addEventListener("click", scrollTO);
 
 // Set sections as active
+
 window.onscroll = isActive;
 
