@@ -75,10 +75,10 @@ sectionElements.forEach(section => {
 
 function isActive() {
     for (let element of sectionElements) {
-        if (item.getBoundingClientRect().top < 100) {
-            item.className = "your-active-class";
+        if (element.getBoundingClientRect().top < 100) {
+            element.className = "your-active-class";
         } else {
-            item.className = "";
+            element.className = "";
         }
     }
 }
