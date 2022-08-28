@@ -41,7 +41,7 @@ function buildNav() {
         
         navbar.onclick = scrollTO(sectionElement.id);
 
-        document.getElementById("navbar__list").appendChild(navbar);
+        document.getElementById("navbar__list").append(navbar);
     }
 };
 
