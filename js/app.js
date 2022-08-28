@@ -37,7 +37,7 @@ function buildNav() {
         navbar.className = "menu__link";
         navbar.innerHTML = `<a href="#${sectionElement.id}">${sectionElement.dataset.nav}</a>`;
        
-        // adding onclick event tied to the section elemnts id for the scroll function
+        // adding onclick event tied to the section elements id for the scroll function
         
         navbar.onclick = scrollTO(sectionElement.id);
 
@@ -144,8 +144,6 @@ window.onload = buildNav;
 
 // the navbar has the 'li' elements and is tying the eventlistener with the onclick event in buildNav
 // navbar.onclick = scrollTO(sectionElement.id);
-
-//document.getElementsByTagName('li').addEventListener('click', scrollTO);
 
 // Set sections as active
 
