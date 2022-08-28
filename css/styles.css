@@ -128,10 +128,27 @@ section {
     text-align: left;
 }
 
+@media only screen and (min-width: 350px) {
+
+    #navbar__list li {
+        padding: 20px 8px;
+    }
+
+    #navbar__list a {
+        font-size: 13px;
+        padding: 0px;
+    }
+
+    .landing__container {
+        padding-top: 4em;
+    }
+}
+
 @media only screen and (min-width: 35em){
     .landing__container {
         max-width: 50em;
         padding: 4em;
+        padding-top: 4em;
     }
 }
 
