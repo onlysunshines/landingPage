@@ -78,12 +78,14 @@ sectionElements.forEach(section => {
 // Add class 'active' to section when near top of viewport
 
 function isActive() {
-    for (sectionElement of sectionElements)
-    if (sectionElement.id === isActive) {
-        sectionElement.className = 'your-active-class';
-    } else {
-        sectionElement.className = '';
-    }
+
+    for (let sectionElement of sectionElements) {
+            if (sectionElement.getBoundingClientRect().top < 100) {
+                sectionElement.className = "your-active-class";
+            } else {
+                sectionElement.className = "";
+            }
+        }
 }
 
 
