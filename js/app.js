@@ -61,23 +61,13 @@ function isInViewport(element) {
 
 function isActive() {
     for (let sectionElement of sectionElements) {
-        if (isInViewport(sectionElement) || percentInViewport(sectionElement)) {
+        if (isInViewport(sectionElement)) {
             sectionElement.className = 'your-active-class';
         } else {
             sectionElement.className = '';
         }
     }
 }
-
-function percentInViewport(element, percentVisible) {
-    let rect = element.getBoundingClientRect(),
-        windowHeight = (window.innerHeight || document.documentElement.clientHeight);
-
-    return !(
-        Math.floor(100 - (((rect.top >= 0 ? 0 : rect.top) / +-rect.height) * 100)) < percentVisible ||
-        Math.floor(100 - ((rect.bottom - windowHeight) / rect.height) * 100) < percentVisible
-    )
-};
 
 // Scroll to anchor ID using scrollTO event
 
