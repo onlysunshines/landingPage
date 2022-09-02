@@ -22,17 +22,16 @@ body {
     color: #fff;
 }
 
-
 /* Typeography General*/
 h1 {
     font-family: 'Fira Sans', sans-serif;
-    font-size: 3em;
+    font-size: 2em;
     margin: 2em 1rem;
 }
 
 @media only screen and (min-width: 35em){
     h1 {
-        font-size: 7em;
+        font-size: 5em;
         margin: 2em 4rem 1em;
     }
 }
@@ -40,12 +39,12 @@ h1 {
 h2 {
     border-bottom: 1px solid #cc1;
     font-family: 'Oxygen', Sans-Serif;
-    font-size: 3em;
+    font-size: 2em;
     color: #fff;
 }
 
 p {
-    line-height: 1.6em;
+    line-height: 1.1em;
     color: #eee;
 }
 
@@ -55,15 +54,15 @@ main {
 }
 
 .main-hero {
-    min-height: 40vh;
-    padding-top: 3em;
+    min-height: 30vh;
+    padding-top: 2em;
 }
 
 section {
     position: relative;
     min-height: 80vh;
+    max-height: 100vh;
 }
-
 
 /* ---- Module Rules ---- */
 
@@ -126,10 +125,12 @@ section {
 .landing__container {
     padding: 1em;
     text-align: left;
+    max-height: 85vh;
 }
 
-@media only screen and (min-width: 350px) {
 
+@media only screen and (min-width: 350px) {
+    
     #navbar__list li {
         padding: 20px 8px;
     }
@@ -142,6 +143,7 @@ section {
     .landing__container {
         padding-top: 4em;
     }
+
 }
 
 @media only screen and (min-width: 35em){
