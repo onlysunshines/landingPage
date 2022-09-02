@@ -61,7 +61,7 @@ function isInViewport(element) {
 
 function isActive() {
     for (let sectionElement of sectionElements) {
-        if (isInViewport(sectionElement)) {
+        if (isInViewport(sectionElement) || percentInViewport(sectionElement)) {
             sectionElement.className = 'your-active-class';
         } else {
             sectionElement.className = '';
