@@ -75,7 +75,7 @@ function scrollTO(e) {
     if (e && e.nodeName === "li") {
         let a = e.getElementsByTagName("a");
         let navElement = a.href;
-        document.getElementById(navElement).scrollIntoView();
+        document.getElementById(navElement).scrollIntoView({ behavior: "smooth");
         
         // calling the is active function here
         
