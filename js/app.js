@@ -80,7 +80,7 @@ function scrollTO(e) {
         // calling the is active function here
         
         isActive();
-        preventDefault();
+        e.preventDefault();
     }
 }
 
