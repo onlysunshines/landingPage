@@ -24,7 +24,7 @@
  * Define Global Variables
 */
 
-const sectionElements = document.getElementsByTagName('section');
+const sectionElements = document.getElementsByTagName("section");
 
 /*
  * Begin Main Functions
@@ -40,10 +40,10 @@ function buildNav() {
         
         // adding eventListener tied to the section elements id for the scroll function
         
-        navbar.addEventListener('click', scrollTO(sectionElement.id));
+        navbar.addEventListener("click", scrollTO(sectionElement.id));
         navbar.onclick = isActive(sectionElement.id);
 
-        document.getElementById('navbar__list').append(navbar);
+        document.getElementById("navbar__list").append(navbar);
     }
 };
 
@@ -62,9 +62,9 @@ function isInViewport(element) {
 function isActive() {
     for (let sectionElement of sectionElements) {
         if (isInViewport(sectionElement)) {
-            sectionElement.className = 'your-active-class';
+            sectionElement.className = "your-active-class";
         } else {
-            sectionElement.className = '';
+            sectionElement.className = "";
         }
     }
 }
@@ -72,12 +72,13 @@ function isActive() {
 // Scroll to anchor ID using scrollTO event
 
 function scrollTO(e) {
-    if (e && e.nodeName === 'li') {
-        let a = e.getElementsByTagName('a');
+    if (e && e.nodeName === "li") {
+        let a = e.getElementsByTagName("a");
         let navElement = a.href;
         document.getElementById(navElement).scrollIntoView();
         // calling the is active function here
         isActive();
+        preventDefault();
     }
 }
 
