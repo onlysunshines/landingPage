@@ -40,7 +40,6 @@ function buildNav() {
         
         // adding eventListener tied to the section elements id for the scroll function
         
-        navbar.addEventListener("click", scrollTO(sectionElement.id));
         navbar.onclick = isActive(sectionElement.id);
 
         document.getElementById("navbar__list").append(navbar);
@@ -75,7 +74,7 @@ function scrollTO(e) {
     if (e && e.nodeName === "li") {
         let a = e.getElementsByTagName("a");
         let navElement = a.href;
-        document.getElementById(navElement).scrollIntoView({ behavior: "smooth");
+        navElement.scrollIntoView({ behavior: "smooth");
         
         // calling the is active function here
         
