@@ -76,7 +76,9 @@ function scrollTO(e) {
         let a = e.getElementsByTagName("a");
         let navElement = a.href;
         document.getElementById(navElement).scrollIntoView();
+        
         // calling the is active function here
+        
         isActive();
         preventDefault();
     }
