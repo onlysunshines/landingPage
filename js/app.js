@@ -68,8 +68,24 @@ function isActive() {
     }
 };
 
+function clickActive() {
+    let navElements = document.getElementsByTagName("li");
+        for (let navElement of navElements) {
+            navElement.addEventListener("click", function() {
+                if(navElement.className === "menu__link") {
+                    navElement.className = "menu__link__active";
+                } else {
+                    navElement.className = "menu__link";
+                }
+                
+            }
+        )
+    }
+}
+
 function myFunction(){
     isActive();
+    clickActive();
     scrollTO();
 }
 
