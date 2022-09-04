@@ -40,8 +40,8 @@ function buildNav() {
         
         // adding eventListener tied to the section elements id for the scroll function
         
-        navbar.onclick = isActive(sectionElement.id);
-
+        navbar.addEventListener("click", myFunction)
+        
         document.getElementById("navbar__list").append(navbar);
     }
 };
@@ -56,7 +56,7 @@ function isInViewport(e) {
         rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
         rect.right <= (window.innerWidth || document.documentElement.clientWidth)
     );
-}
+};
 
 function isActive() {
     for (let sectionElement of sectionElements) {
@@ -66,21 +66,18 @@ function isActive() {
             sectionElement.className = "";
         }
     }
+};
+
+function myFunction(){
+    isActive();
+    scrollTO();
 }
 
 // Scroll to anchor ID using scrollTO event
 
 function scrollTO(e) {
-    if (e && e.nodeName === "li") {
-        let a = e.getElementsByTagName("a");
-        let navElement = a.href;
-        navElement.scrollIntoView({ behavior: "smooth");
-        
-        // calling the is active function here
-        
-        isActive();
-        e.preventDefault();
-    }
+    e.preventDefault();
+    document.sectionElement.id.scrollIntoView({behavior: "smooth"});
 }
 
 /**
@@ -94,8 +91,6 @@ window.onload = buildNav;
 
 // Scroll to section on link click
 
-// this line from buildNav is accomplishing this
-// navbar.onclick = scrollTO(sectionElement.id);
 
 // Set sections as active
 
