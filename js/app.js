@@ -37,6 +37,7 @@ function buildNav() {
         let navbarElement = document.createElement("li");
         navbarElement.className = "menu__link";
         navbarElement.innerHTML = `<a href="#${sectionElement.id}">${sectionElement.dataset.nav}</a>`;
+        navbarElement.id = `${sectionElement.id}`;
         
 // eventListener tied to navbarElement that hold each section elements id to smooth scroll to
         
@@ -44,22 +45,6 @@ function buildNav() {
             event.preventDefault();
             sectionElement.scrollIntoView({behavior: "smooth"});
         });
-
-// highlights the navElement that corresponds with the sectionElement in view
-
-        if(isInViewport(navbarElement) && (isInViewport(sectionElement))) {
-            navbarElement.className = "menu__link__active";
-        } else {
-            navbarElement.className = "menu__link";
-        };
-
-        navbarElement.addEventListener("scroll", function() {
-            if(isInViewport(navbarElement) && (isInViewport(sectionElement))) {
-                navbarElement.className = "menu__link__active";
-            } else {
-                navbarElement.className = "menu__link";
-            };
-        })
         
         document.getElementById("navbar__list").append(navbarElement);
     }
@@ -67,8 +52,8 @@ function buildNav() {
 
 // Add class 'active' to section when near top of viewport
 
-function isInViewport(e) {
-    let rect = e.getBoundingClientRect();
+function isInViewport(element) {
+    let rect = element.getBoundingClientRect();
     return (
         rect.top >= 0 &&
         rect.left >= 0 &&
@@ -81,6 +66,17 @@ function isActive() {
     for (let sectionElement of sectionElements) {
         if (isInViewport(sectionElement)) {
             sectionElement.className = "your-active-class";
+
+            // highlights the navElement that corresponds with the sectionElement in view
+
+            let elementLis = document.getElementsByTagName("li")
+            for (let elementLi of elementLis) {
+                if(sectionElement.id === elementLi.id) {
+                    elementLi.className = "menu__link__active";
+                } else {
+                    elementLi.className = "menu__link";
+                }
+            }
         } else {
             sectionElement.className = "";
         }
@@ -105,7 +101,7 @@ window.onload = buildNav;
 // this is occurring inside of the buildNav function
 /*
 
-navbar.addEventListener("click", function(e) {
+navbarElement.addEventListener("click", function(e) {
             e.preventDefault();
             sectionElement.scrollIntoView({behavior: "smooth"})
         })
