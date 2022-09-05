@@ -40,8 +40,8 @@ function buildNav() {
         
 // eventListener tied to navbarElement that hold each section elements id to smooth scroll to
         
-        navbarElement.addEventListener("click", function(e) {
-            e.preventDefault();
+        navbarElement.addEventListener("click", function(event) {
+            event.preventDefault();
             sectionElement.scrollIntoView({behavior: "smooth"});
         });
 
