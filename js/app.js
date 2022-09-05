@@ -85,7 +85,7 @@ function isActive() {
 
 // Scroll to anchor ID using scrollTO event
 
-// attempting this inside the buildNav function
+// occurring inside of isActive matching sectionElement.id to elementLi.id
 
 /**
  * End Main Functions
