@@ -77,6 +77,7 @@ function isActive() {
                     elementLi.className = "menu__link";
                 }
             }
+            
         } else {
             sectionElement.className = "";
         }
