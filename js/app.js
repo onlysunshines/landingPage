@@ -38,18 +38,19 @@ function buildNav() {
         navbar.className = "menu__link";
         navbar.innerHTML = `<a href="#${sectionElement.id}">${sectionElement.dataset.nav}</a>`;
         
-        // adding eventListener tied to the section elements id for the scroll function
+// eventListener tied to navbar that hold the section elements id smooth scroll
         
         navbar.addEventListener("click", function(e) {
             e.preventDefault();
             sectionElement.scrollIntoView({behavior: "smooth"});
-            if(navbar.className === "menu__link") {
+        });
+        sectionElement.addEventListener("scroll", function() {
+            if(isInViewport(sectionElement)) {
                 navbar.className = "menu__link__active";
             } else {
                 navbar.className = "menu__link";
             }
-        });
-        
+        })
         
         document.getElementById("navbar__list").append(navbar);
     }
@@ -77,33 +78,9 @@ function isActive() {
     }
 };
 
-function clickActive() {
-    let navElements = document.getElementsByTagName("li");
-        for (let navElement of navElements) {
-            navElement.addEventListener("click", function() {
-                if(navElement.className === "menu__link") {
-                    navElement.className = "menu__link__active";
-                } else {
-                    navElement.className = "menu__link";
-                }
-                
-            }
-        )
-    }
-}
-
-function myFunction(){
-    isActive();
-    clickActive();
-    scrollTO();
-}
-
 // Scroll to anchor ID using scrollTO event
 
-function scrollTO(e) {
-    e.preventDefault();
-    document.sectionElement.id.scrollIntoView({behavior: "smooth"});
-}
+// attempting this inside the buildNav function
 
 /**
  * End Main Functions
@@ -116,6 +93,15 @@ window.onload = buildNav;
 
 // Scroll to section on link click
 
+// this is occurring inside of the buildNav function
+/*
+
+navbar.addEventListener("click", function(e) {
+            e.preventDefault();
+            sectionElement.scrollIntoView({behavior: "smooth"})
+        })
+
+*/
 
 // Set sections as active
 
