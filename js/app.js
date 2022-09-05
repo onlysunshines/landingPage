@@ -34,25 +34,34 @@ const sectionElements = document.getElementsByTagName("section");
 
 function buildNav() {
     for (let sectionElement of sectionElements) {
-        let navbar = document.createElement("li");
-        navbar.className = "menu__link";
-        navbar.innerHTML = `<a href="#${sectionElement.id}">${sectionElement.dataset.nav}</a>`;
+        let navbarElement = document.createElement("li");
+        navbarElement.className = "menu__link";
+        navbarElement.innerHTML = `<a href="#${sectionElement.id}">${sectionElement.dataset.nav}</a>`;
         
-// eventListener tied to navbar that hold the section elements id smooth scroll
+// eventListener tied to navbarElement that hold each section elements id to smooth scroll to
         
-        navbar.addEventListener("click", function(e) {
+        navbarElement.addEventListener("click", function(e) {
             e.preventDefault();
             sectionElement.scrollIntoView({behavior: "smooth"});
         });
-        sectionElement.addEventListener("scroll", function() {
-            if(isInViewport(sectionElement)) {
-                navbar.className = "menu__link__active";
+
+// highlights the navElement that corresponds with the sectionElement in view
+
+        if(isInViewport(navbarElement) && (isInViewport(sectionElement))) {
+            navbarElement.className = "menu__link__active";
+        } else {
+            navbarElement.className = "menu__link";
+        };
+
+        navbarElement.addEventListener("scroll", function() {
+            if(isInViewport(navbarElement) && (isInViewport(sectionElement))) {
+                navbarElement.className = "menu__link__active";
             } else {
-                navbar.className = "menu__link";
-            }
+                navbarElement.className = "menu__link";
+            };
         })
         
-        document.getElementById("navbar__list").append(navbar);
+        document.getElementById("navbar__list").append(navbarElement);
     }
 };
 
