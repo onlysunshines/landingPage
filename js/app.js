@@ -40,7 +40,16 @@ function buildNav() {
         
         // adding eventListener tied to the section elements id for the scroll function
         
-        navbar.addEventListener("click", myFunction)
+        navbar.addEventListener("click", function(e) {
+            e.preventDefault();
+            sectionElement.scrollIntoView({behavior: "smooth"});
+            if(navbar.className === "menu__link") {
+                navbar.className = "menu__link__active";
+            } else {
+                navbar.className = "menu__link";
+            }
+        });
+        
         
         document.getElementById("navbar__list").append(navbar);
     }
